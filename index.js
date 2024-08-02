@@ -25,6 +25,12 @@ const path = require('path');
 const { Order } = require('./model/Order');
 const { env } = require('process');
 
+
+
+// send mail with defined transport object
+
+
+
 // Webhook
 
 const endpointSecret = process.env.ENDPOINT_SECRET;
@@ -70,7 +76,7 @@ server.post(
 
 const opts = {};
 opts.jwtFromRequest = cookieExtractor;
-opts.secretOrKey = process.env.JWT_SECRET_KEY; 
+opts.secretOrKey = process.env.JWT_SECRET_KEY;
 
 //middlewares
 

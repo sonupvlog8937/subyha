@@ -9,6 +9,7 @@ const userSchema = new Schema({
   // for addresses, we can make a separate Schema like orders. but in this case we are fine
   name: { type: String },
   salt: Buffer,
+  resetPasswordToken: {type: String, default:''}
 },{timestamps: true});
 
 const virtual = userSchema.virtual('id');
@@ -24,3 +25,4 @@ userSchema.set('toJSON', {
 });
 
 exports.User = mongoose.model('User', userSchema);
+
