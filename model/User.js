@@ -8,8 +8,7 @@ const userSchema = new Schema({
   addresses: { type: [Schema.Types.Mixed] }, 
   // for addresses, we can make a separate Schema like orders. but in this case we are fine
   name: { type: String },
-  salt: Buffer,
-  resetPasswordToken: {type: String, default:''}
+  salt: Buffer
 },{timestamps: true});
 
 const virtual = userSchema.virtual('id');
